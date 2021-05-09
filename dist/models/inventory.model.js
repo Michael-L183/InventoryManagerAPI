@@ -4,10 +4,13 @@ class Inventory {
     constructor(norm) {
         this.model = [{
                 id: { type: Number, key: 'primary' },
-                name: { type: String, maxlength: 24 },
-                model: { type: String, maxlength: 24 },
-                serial: { type: String, maxlength: 24 },
-                price: { type: String, maxlength: 99 },
+                hardwareName: { type: String, maxlength: 100 },
+                hardwareInfo: { type: String, maxlength: 500 },
+                modelPurchased: { type: String, maxlength: 500 },
+                serialNumber: { type: Number, maxlength: 24 },
+                datePurchased: { type: String, maxlength: 99 },
+                price: { type: Number, maxlength: 99 },
+                quantity: { type: Number, maxlength: 5000 },
                 image_url: { type: String, maxlength: 1000 },
                 user_id: {
                     type: Number,
@@ -16,7 +19,7 @@ class Inventory {
                     onDelete: 'cascade',
                     onUpdate: 'cascade'
                 },
-            }, 'A table to store user book', []];
+            }, 'A table to store user hardware', []];
     }
     set model(model) {
         this._model = model;
